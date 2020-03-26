@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Liver CT</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Liver_CT.css">
+    <script type="text/javascript" src="Bookmark.js"></script>
+    <script type="text/javascript" src="AddDiv.js"></script>
+    <script type="text/javascript" src="Bookmark_tag.js"></script>
+    <script type="text/javascript" src="closetag.js"></script>
+
+  </head>
+
+  <body>
+    <div calss="all">
+      <div class="top"></div>
+      <div class="under">
+        <!--頁籤-->
+        <div class="tabs">
+          <ul>
+            <li class="tab-open" id="tab1" onclick="showLayer(this,'lef1')">Procedure</li>
+            <li class="tab-close" id="tab2" onclick="showLayer(this,'lef2')">Clinical Information</li>
+            <li class="tab-close" id="tab3" onclick="showLayer(this,'lef3')">Comparison</li>
+            <li class="tab-close" id="tab4" onclick="showLayer(this,'lef4')">Findings</li>
+            <li class="tab-close" id="tab5" onclick="showLayer(this,'lef5')">Impression</li>
+            <li class="tab-close" id="tab6" onclick="showLayer(this,'lef6')">other</li>
+          </ul>
+        </div>
+        <!--主體-->
+        <div class="MB">
+          <!--Procedure-->
+          <div class="lef" id="lef1" style="display: block;">
+            <li class="lef-tag">
+              <span class="lef-text">MRI sequences</span>
+            </li>
+            <li class="lef-tag">
+              <span class="lef-text">Evaluation</span>
+            </li>
+            <li class="lef-tag">
+              <span class="lef-text">Contrash agent and treatmet</span>
+            </li>
+          </div>
+          <!--Clinical Information-->
+          <div class="lef" id="lef2" style="display: none;">
+            <li class="lef-tag">
+              <span class="lef-text">Clinical Information</span>
+            </li>
+          </div>
+          <!--Comparison-->
+          <div class="lef" id="lef3" style="display: none;">
+            <li class="lef-tag">
+              <span class="lef-text">Comparison</span>
+            </li>
+          </div>
+          <!--Findings-->
+          <div class="lef" id="lef4" style="display: none;">
+            <li class="lef-tag">
+              <span class="lef-text">Normal findings</span>
+            </li>
+            <li class="lef-tag" id="tagname1" onclick="a(this,'tag1')">
+              <span class="lef-text">Liver</span>
+            </li>
+            <li class="lef-tag" id="tagname2" onclick="a(this,'tag2')">
+              <span class="lef-text">Liver vessels</span>
+            </li>
+            <li class="lef-tag" id="tagname3" onclick="a(this,'tag3')">
+              <span class="lef-text">Biliary tract</span>
+            </li>
+            <li class="lef-tag" id="tagname4" onclick="a(this,'tag4')">
+              <span class="lef-text">Gallbladder</span>
+            </li>
+            <li class="lef-tag" id="tagname5" onclick="a(this,'tag5')">
+              <span class="lef-text">Ascites</span>
+            </li>
+            <li class="lef-tag" id="tagname6" onclick="a(this,'tag6')">
+              <span class="lef-text">Lymph nodes</span>
+            </li>
+            <li class="lef-tag" id="tagname7" onclick="a(this,'tag7')">
+              <span class="lef-text">Others</span>
+            </li>
+          </div>
+          <!--Impression-->
+          <div class="lef" id="lef5" style="display: none">
+            <li class="lef-tag">
+              <span class="lef-text">Liver</span>
+            </li>
+            <li class="lef-tag">
+              <span class="lef-text">Biliary tract</span>
+            </li>
+            <li class="lef-tag">
+              <span class="lef-text">Gallbladder</span>
+            </li>
+            <li class="lef-tag">
+              <span class="lef-text">Ascites</span>
+            </li>
+            <li class="lef-tag">
+              <span class="lef-text">Lymph nodes</span>
+            </li>
+            <li class="lef-tag">
+              <span class="lef-text">other</span>
+            </li>
+          </div>
+          <!--other-->
+          <div class="lef" id="lef6" style="display: none">
+            <li class="lef-tag">
+              <span class="lef-text">other</span>
+            </li>
+          </div>
+          <!---->
+          <div class="choose">
+            <div class="choose-top">填選子節點
+              <div class="closetag" onclick="closetag()">
+                <button>移除全部</button>
+              </div>
+            </div>
+            <div class="choose-bottom">
+              <div id="box" ></div>
+            </div>
+          </div>
+          <!--Liver-->
+          <div class="tag" id="tag1" style="display: block;">
+            <div class="tag-title">Modules</div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('Renal Cyst')">Renal Cyst</div>
+              <div class="tag-body-sort" onclick="AddDiv('Hydronephrosis')">Hydronephrosis</div>
+              <div class="tag-body-sort" onclick="AddDiv('Hiatal Hernia')">Hiatal Hernia</div>
+            </div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('Spleen Size According Lugano')">Spleen Size According Lugano</div>
+              <div class="tag-body-sort" onclick="AddDiv('Solitary Lung Nodule')">Solitary Lung Nodule</div>
+              <div class="tag-body-sort" style="cursor: default;">
+                <button style="width: 100px; height: 60px; line-height: 30px;" id="del">MORE</button>
+              </div>
+            </div>
+          </div>
+          <!--Liver vessels-->
+          <div class="tag" id="tag2" style="display: none;">
+            <div class="tag-title">Modules</div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('Renal Cyst')">Renal Cyst</div>
+              <div class="tag-body-sort" onclick="AddDiv('Subdural Hygroma-TBI Module')">Subdural Hygroma-TBI Module</div>
+              <div class="tag-body-sort" onclick="AddDiv('Spleen Size According to Lugano')">Spleen Size According to Lugano</div>
+            </div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('Hydronephrosis')">Hydronephrosis</div>
+              <div class="tag-body-sort" onclick="AddDiv('PI-RADS Prostate Lesion Peripheral Zone')">PI-RADS Prostate Lesion Peripheral Zone</div>
+              <div class="tag-body-sort" style="cursor: default;">
+                <button style="width: 100px; height: 60px; line-height: 30px;" id="del">MORE</button>
+              </div>
+            </div>
+          </div>
+          <!--Biliary tract-->
+          <div class="tag" id="tag3" style="display: none;">
+            <div class="tag-title">Modules</div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('Renal Cyst')">Renal Cyst</div>
+              <div class="tag-body-sort" onclick="AddDiv('Hiatal Hernia')">Hiatal Hernia</div>
+              <div class="tag-body-sort" onclick="AddDiv('Spinal MS Lesion')">Spinal MS Lesion</div>
+            </div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('Hydronephrosis')">Hydronephrosis</div>
+              <div class="tag-body-sort" onclick="AddDiv('PI-RADS Prostate Lesion Peripheral Zone')">PI-RADS Prostate Lesion Peripheral Zone</div>
+              <div class="tag-body-sort" style="cursor: default;">
+                <button style="width: 100px; height: 60px; line-height: 30px;" id="del">MORE</button>
+              </div>
+            </div>
+          </div>
+          <!--Gallbladder-->
+          <div class="tag" id="tag4" style="display: none;">
+            <div class="tag-title">Modules</div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('Renal Cyst')">Renal Cyst</div>
+              <div class="tag-body-sort" onclick="AddDiv('Spleen Size According to Lugano')">Spleen Size According to Lugano</div>
+              <div class="tag-body-sort" onclick="AddDiv('Renal Cyst')">Renal Cyst</div>
+            </div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('PI-RADS Prostate Lesion Peripheral Zone')">PI-RADS Prostate Lesion Peripheral Zone</div>
+              <div class="tag-body-sort"></div>
+              <div class="tag-body-sort" style="cursor: default;">
+                <button style="width: 100px; height: 60px; line-height: 30px;" id="del">MORE</button>
+              </div>
+            </div>
+          </div>
+          <!--Ascites-->
+          <div class="tag" id="tag5" style="display: none;">
+            <div class="tag-title">Modules</div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('Spleen Size According to Lugano')">Spleen Size According to Lugano</div>
+              <div class="tag-body-sort" onclick="AddDiv('Hydronephrosis')">Hydronephrosis</div>
+              <div class="tag-body-sort" onclick="AddDiv('PI-RADS Prostate Lesion Peripheral Zone')">PI-RADS Prostate Lesion Peripheral Zone</div>
+            </div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('Renal Cyst')">Renal Cyst</div>
+              <div class="tag-body-sort" ></div>
+              <div class="tag-body-sort" style="cursor: default;">
+                <button style="width: 100px; height: 60px; line-height: 30px;" id="del">MORE</button>
+              </div>
+            </div>
+          </div>
+          <!--Lymph nodes-->
+          <div class="tag" id="tag6" style="display: none;">
+            <div class="tag-title">Modules</div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('PI-RADS Prostate Lesion Peripheral Zone')">PI-RADS Prostate Lesion Peripheral Zone</div>
+              <div class="tag-body-sort" onclick="AddDiv('Hydronephrosis')">Hydronephrosis</div>
+              <div class="tag-body-sort" onclick="AddDiv('Renal Cyst')">Renal Cyst</div>
+            </div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('Spleen Size According to Lugano')">Spleen Size According to Lugano</div>
+              <div class="tag-body-sort"></div>
+              <div class="tag-body-sort" style="cursor: default;">
+                <button style="width: 100px; height: 60px; line-height: 30px;" id="del">MORE</button>
+              </div>
+            </div>
+          </div>
+          <!--other-->
+          <div class="tag" id="tag7" style="display: none;">
+            <div class="tag-title">Modules</div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('PI-RADS Prostate Lesion Peripheral Zone')">Spleen Size According to Lugano</div>
+              <div class="tag-body-sort" onclick="AddDiv('Hydronephrosis')">Hydronephrosis</div>
+              <div class="tag-body-sort" onclick="AddDiv('Subdural Hematoma(SDH)-TBI Module')">Subdural Hematoma(SDH)-TBI Module</div>
+            </div>
+            <div class="tag-body">
+              <div class="tag-body-sort" onclick="AddDiv('Renal Cyst')">Renal Cyst</div>
+              <div class="tag-body-sort" onclick="AddDiv('Hiatal Hernia')">Hiatal Hernia</div>
+              <div class="tag-body-sort" style="cursor: default;">
+                <button style="width: 100px; height: 60px; line-height: 30px;" id="del">MORE</button>
+              </div>
+            </div>
+          </div>
+          <div class="text">
+            <div class="choose-top" style="height: 5.5%;">顯示區</div>
+            <div class="choose-bottom" style="height: 94.5%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
